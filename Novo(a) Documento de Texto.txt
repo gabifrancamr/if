@@ -1,0 +1,28 @@
+function getMinSubsequences(input_str) {
+    // Se a string for vazia ou tiver um único caractere, basta um pacote
+    if (input_str.length <= 1) return 1;
+
+    // Inicializa o contador de subsequências
+    let subsequenceCount = 1;
+  
+  let sequence = "";
+  let subsequence = [];
+
+    // Percorre a string
+    for (let i = 1; i < input_str.length; i++) {
+        // 1101
+        if (input_str[i] !== input_str[i - 1]) {
+            sequence+=input_str[i];
+        } else {
+          subsequence.push(input_str[i])
+        }
+    }
+  
+  subsequence.push(sequence)
+
+    return subsequence.length;
+}
+
+// Exemplos de uso:
+console.log(getMinSubsequences("1101"));  // Saída: 2
+console.log(getMinSubsequences("00100"));
